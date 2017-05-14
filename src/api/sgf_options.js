@@ -305,7 +305,7 @@ glift.api.SgfOptions = function(opt_o) {
    * Values: NEVER, ALWAYS, MORE_THAN_ONE
    *
    * api:1.0
-   * @const {glift.enums.showVariations}
+   * @type {glift.enums.showVariations}
    */
   this.showVariations = o.showVariations ||
       glift.enums.showVariations.MORE_THAN_ONE;

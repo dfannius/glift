@@ -98,6 +98,7 @@ glift.flattener.Collision;
  */
 glift.flattener.flatten = function(movetreeInitial, opt_options) {
   // Create a new ref to avoid changing original tree ref.
+  // console.log("glift.flattener.flatten()");
   var mt = movetreeInitial.newTreeRef();
   var options = opt_options || {};
 
@@ -185,6 +186,7 @@ glift.flattener.flatten = function(movetreeInitial, opt_options) {
   var sv = glift.enums.showVariations
   if (showVars === sv.ALWAYS || (
       showVars === sv.MORE_THAN_ONE && mt.node().numChildren() > 1)) {
+    // console.log("updateLabelsWithVariations_");
     glift.flattener.updateLabelsWithVariations_(
         mt, markMap, correctNextMoves, options.selectedNextMove);
   }

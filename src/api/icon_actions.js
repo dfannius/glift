@@ -150,6 +150,7 @@ glift.api.iconActionDefaults = {
 
   // Go to the explain-board for a problem.
   // (was roadmap)
+  /*
   'problem-explanation': {
     click: function(event, widget, icon, iconBar) {
       var manager = widget.manager;
@@ -173,6 +174,22 @@ glift.api.iconActionDefaults = {
       manager.createTemporaryWidget(sgfObj);
     },
     tooltip: 'Explore the solution'
+  },
+  */
+
+  'problem-explanation': {
+    click: function(event, widget, icon, iconBar) {
+      if (widget.sgfOptions.showVariations === glift.enums.showVariations.NEVER) {
+        // console.log( "this.showVariations ALWAYS" );
+        widget.sgfOptions.showVariations = glift.enums.showVariations.ALWAYS;
+      } else {
+        // console.log( "this.showVariations NEVER" );
+        widget.sgfOptions.showVariations = glift.enums.showVariations.NEVER;
+      }
+      widget.controller.setShowVariations(widget.sgfOptions.showVariations);
+      widget.applyBoardData(widget.controller.flattenedState());
+    },
+    tooltip: 'Toggle display of good/bad moves'
   },
 
   multiopen: {

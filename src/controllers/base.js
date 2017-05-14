@@ -511,6 +511,10 @@ glift.controllers.BaseController.prototype = {
     return this.flattenedState();
   },
 
+  setShowVariations: function(showVariations) {
+    this.showVariations_ = showVariations;
+  },
+
   /////////////////////
   // Private Methods //
   /////////////////////
