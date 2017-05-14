@@ -12,7 +12,7 @@ glift.rules.problems = {
   /**
    * Determines if a 'move' is correct. Takes a movetree and a series of
    * conditions, which is a map of properties to an array of possible substring
-   * matches.  Only one conditien must be met.
+   * matches.  Only one condition must be met.
    *
    * Problem results:
    *
@@ -20,7 +20,7 @@ glift.rules.problems = {
    *    conditions.
    * INDETERMINATE - There must exist at path to a correct position from the
    *    current position.
-   * INCORRECT - The position has to path to a correct position.
+   * INCORRECT - The position has no path to a correct position.
    *
    * Some Examples:
    *    Correct if there is a GB property or the words 'Correct' or 'is correct' in
