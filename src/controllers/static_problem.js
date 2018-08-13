@@ -113,7 +113,11 @@ glift.controllers.StaticProblem.prototype = {
       correctness = glift.rules.problems.positionCorrectness(
           this.movetree, this.problemConditions);
       outData = this.flattenedState();
-      outData.setProblemResult(correctness);
+      // console.log("nextMoves().length = " + this.movetree.nextMoves().length);
+      if (!(correctness === INCORRECT && this.movetree.nextMoves().length > 0)) {
+        // console.log("setting correctness to " + correctness);
+        outData.setProblemResult(correctness);
+      }
       return outData;
     }
     else {
